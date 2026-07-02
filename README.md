@@ -58,6 +58,7 @@ Open your browser and navigate to `http://127.0.0.1:5000`. You can then:
 - Upload a resume file.
 - Enter a job description.
 - View the matching score and extracted information.
+- Download report in .txt format.
 
 ---
 
@@ -105,4 +106,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-*Created on 2026‑07‑02*
+

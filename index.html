@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RecruitIQ – AI Resume Screening Tool</title>
+  <meta name="description"
+    content="AI-powered resume screening tool that ranks candidates using multi-dimensional scoring, detects bias, and generates transparent rationale for every hiring decision." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo">
+        <div class="logo-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <span>RecruitIQ</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#bias-audit" class="nav-link">Bias Audit</a></li>
+        <li><a href="#screener" class="nav-link">Try It</a></li>
+      </ul>
+      <a href="#screener" class="btn btn-primary nav-cta">Launch Tool</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="hero-orb hero-orb-1"></div>
+      <div class="hero-orb hero-orb-2"></div>
+      <div class="hero-orb hero-orb-3"></div>
+      <div class="hero-grid"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        AI-Powered · Bias-Aware · Transparent
+      </div>
+      <h1 class="hero-title">
+        Screen Resumes<br />
+        <span class="gradient-text">Smarter & Fairer</span>
+      </h1>
+      <p class="hero-subtitle">
+        Upload a job description and up to 10 resumes. Our AI ranks candidates across Skills, Experience, and Culture —
+        with a built-in Bias Audit to keep every decision transparent and equitable.
+      </p>
+      <div class="hero-actions">
+        <a href="#screener" class="btn btn-primary btn-lg" id="heroLaunchBtn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          Start Screening
+        </a>
+        <a href="#how-it-works" class="btn btn-ghost btn-lg">Learn How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-number">10x</span>
+          <span class="stat-label">Faster Screening</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">3</span>
+          <span class="stat-label">Scoring Dimensions</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Bias-Audited</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="preview-card preview-card-back"></div>
+        <div class="preview-card preview-card-mid"></div>
+        <div class="preview-card preview-card-front">
+          <div class="pc-header">
+            <div class="pc-avatar">JD</div>
+            <div class="pc-info">
+              <span class="pc-name">James Davidson</span>
+              <span class="pc-role">Senior ML Engineer</span>
+            </div>
+            <div class="pc-rank">#1</div>
+          </div>
+          <div class="pc-scores">
+            <div class="pc-score-row">
+              <span class="pc-score-label">Skills Match</span>
+              <div class="pc-bar">
+                <div class="pc-bar-fill" style="width:92%;--c:#6366f1"></div>
+              </div>
+              <span class="pc-score-val">92%</span>
+            </div>
+            <div class="pc-score-row">
+              <span class="pc-score-label">Experience</span>
+              <div class="pc-bar">
+                <div class="pc-bar-fill" style="width:88%;--c:#8b5cf6"></div>
+              </div>
+              <span class="pc-score-val">88%</span>
+            </div>
+            <div class="pc-score-row">
+              <span class="pc-score-label">Culture Fit</span>
+              <div class="pc-bar">
+                <div class="pc-bar-fill" style="width:85%;--c:#06b6d4"></div>
+              </div>
+              <span class="pc-score-val">85%</span>
+            </div>
+          </div>
+          <div class="pc-tag pc-tag-top">⭐ Top Candidate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Core Capabilities</span>
+        <h2 class="section-title">Everything You Need for Fair Hiring</h2>
+        <p class="section-subtitle">Built to the exact specifications of a production-grade recruitment intelligence
+          platform.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card feature-card-large">
+          <div class="feature-icon" style="--ic:#6366f1">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Multi-Dimensional Scoring</h3>
+          <p>Every resume is scored across three critical axes: <strong>Skills Match</strong> (keyword density +
+            semantic NLP), <strong>Experience Level</strong> (seniority alignment), and <strong>Culture Signals</strong>
+            (soft-skill proxies). Scores are aggregated into a single composite rank.</p>
+          <div class="feature-visual">
+            <div class="mini-bars">
+              <div class="mini-bar" style="height:70%;background:var(--indigo)"></div>
+              <div class="mini-bar" style="height:90%;background:var(--purple)"></div>
+              <div class="mini-bar" style="height:60%;background:var(--cyan)"></div>
+              <div class="mini-bar" style="height:85%;background:var(--indigo)"></div>
+              <div class="mini-bar" style="height:75%;background:var(--purple)"></div>
+              <div class="mini-bar" style="height:95%;background:var(--cyan)"></div>
+            </div>
+          </div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="--ic:#8b5cf6">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M3 4h13M3 8h9m-9 4h6m4 0l4-4 4 4M12 20l4-4 4 4" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Algorithmic Ranking</h3>
+          <p>Deterministic, reproducible candidate ordering. Every run on the same inputs yields the same leaderboard —
+            fully auditable.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="--ic:#06b6d4">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>AI Rationale</h3>
+          <p>One-paragraph natural-language explanation per candidate — so every hiring decision can be justified and
+            discussed.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="--ic:#f59e0b">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Bias Detection</h3>
+          <p>Automatically flags name-based demographic proxies. Score variance across name-altered profiles is tracked
+            and reported.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon" style="--ic:#10b981">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+          <h3>Privacy-Safe Processing</h3>
+          <p>PII isolation by design. Names and locations are extracted and separately tracked — never used in core
+            scoring.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Pipeline</span>
+        <h2 class="section-title">How It Works</h2>
+        <p class="section-subtitle">A four-stage processing pipeline from upload to insights.</p>
+      </div>
+      <div class="steps-container">
+        <div class="step-line"></div>
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Upload & Parse</h3>
+            <p>Drop your Job Description (PDF or TXT) and up to 10 applicant resumes. Our backend sanitizes file
+              structure and extracts clean text blocks via advanced PDF parsing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Semantic Analysis</h3>
+            <p>Text blocks are fed into a dual-engine: semantic similarity comparison (sentence embeddings) + keyword
+              density matching against JD requirements.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Score & Rank</h3>
+            <p>Composite scores are computed for Skills Match, Experience Level, and Culture Signals. Candidates are
+              deterministically sorted into the leaderboard.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Audit & Report</h3>
+            <p>The Bias Audit module re-runs scoring with name-varied profiles, logs any score deltas, and generates a
+              Bias Compliance Report alongside individual rationales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BIAS AUDIT SECTION ===== -->
+  <section class="bias-section" id="bias-audit">
+    <div class="container">
+      <div class="bias-grid">
+        <div class="bias-content">
+          <span class="section-badge section-badge-amber">Bias Audit Module</span>
+          <h2 class="section-title">Hiring Decisions That Stand Up to Scrutiny</h2>
+          <p>Our mandatory Bias Audit cell runs a controlled experiment on every screening session: it intentionally
+            varies candidate names across otherwise identical resume profiles, re-runs the scoring model, and measures
+            any quantitative variance.</p>
+          <ul class="bias-list">
+            <li>
+              <div class="bias-check">✓</div>
+              <span>Name-variation testing across identical resume profiles</span>
+            </li>
+            <li>
+              <div class="bias-check">✓</div>
+              <span>Score delta tracking per name substitution run</span>
+            </li>
+            <li>
+              <div class="bias-check">✓</div>
+              <span>Demographic proxy detection (names, locations, institutions)</span>
+            </li>
+            <li>
+              <div class="bias-check">✓</div>
+              <span>Auto-generated Bias Compliance Report with anomaly flags</span>
+            </li>
+          </ul>
+        </div>
+        <div class="bias-visual">
+          <div class="bias-card">
+            <div class="bias-card-header">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Bias Audit Report
+              <span class="audit-badge audit-pass">PASS</span>
+            </div>
+            <div class="bias-rows">
+              <div class="bias-row">
+                <span class="bias-row-label">Name Variation Test</span>
+                <span class="bias-row-delta bias-delta-low">Δ 0.3%</span>
+              </div>
+              <div class="bias-row">
+                <span class="bias-row-label">Location Proxy Check</span>
+                <span class="bias-row-delta bias-delta-low">Δ 0.0%</span>
+              </div>
+              <div class="bias-row">
+                <span class="bias-row-label">Institution Bias Check</span>
+                <span class="bias-row-delta bias-delta-warn">Δ 2.1%</span>
+              </div>
+              <div class="bias-row">
+                <span class="bias-row-label">Gender Proxy Detection</span>
+                <span class="bias-row-delta bias-delta-low">Δ 0.0%</span>
+              </div>
+            </div>
+            <div class="bias-card-footer">
+              <span>Overall Bias Index: </span>
+              <span class="bias-index-val">Low (0.61%)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SCREENER TOOL ===== -->
+  <section class="screener" id="screener">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Interactive Demo</span>
+        <h2 class="section-title">Try the Screening Tool</h2>
+        <p class="section-subtitle">Upload a job description and up to 10 resumes to see the AI in action.</p>
+      </div>
+
+      <!-- Upload Panel -->
+      <div class="screener-panel" id="uploadPanel">
+        <div class="upload-grid">
+          <!-- JD Upload -->
+          <div class="upload-zone" id="jdZone">
+            <div class="upload-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3>Job Description</h3>
+            <p>Drag & drop or click to upload<br /><span class="upload-formats">.PDF or .TXT</span></p>
+            <input type="file" id="jdFile" accept=".pdf,.txt" class="file-input" />
+            <button class="btn btn-outline" onclick="document.getElementById('jdFile').click()">Choose File</button>
+            <div class="file-chosen" id="jdChosen"></div>
+          </div>
+
+          <!-- Resumes Upload -->
+          <div class="upload-zone upload-zone-resumes" id="resumesZone">
+            <div class="upload-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <h3>Applicant Resumes</h3>
+            <p>Upload up to <strong>10 resumes</strong><br /><span class="upload-formats">.PDF format</span></p>
+            <input type="file" id="resumeFiles" accept=".pdf" multiple class="file-input" />
+            <button class="btn btn-outline" onclick="document.getElementById('resumeFiles').click()">Choose
+              Files</button>
+            <div class="file-chosen" id="resumesChosen"></div>
+          </div>
+        </div>
+
+        <div class="screener-actions">
+          <button class="btn btn-primary btn-xl" id="runScreeningBtn" onclick="runScreening()">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Run AI Screening
+          </button>
+        </div>
+      </div>
+
+      <!-- Processing Spinner -->
+      <div class="processing-overlay" id="processingOverlay" style="display:none;">
+        <div class="processing-card">
+          <div class="spinner-ring"></div>
+          <h3 id="processingStatus">Extracting text from PDFs...</h3>
+          <div class="processing-steps">
+            <div class="proc-step active" id="procStep1">📄 Parsing documents</div>
+            <div class="proc-step" id="procStep2">🧠 Running semantic analysis</div>
+            <div class="proc-step" id="procStep3">📊 Computing scores</div>
+            <div class="proc-step" id="procStep4">🔍 Running bias audit</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results Panel -->
+      <div class="results-panel" id="resultsPanel" style="display:none;">
+        <!-- Leaderboard -->
+        <div class="results-header">
+          <h3>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Candidate Leaderboard
+          </h3>
+          <div class="results-tabs">
+            <button class="tab-btn tab-active" id="tabLeaderboard" onclick="showTab('leaderboard')">Leaderboard</button>
+            <button class="tab-btn" id="tabBiasAudit" onclick="showTab('biasAudit')">Bias Audit</button>
+          </div>
+        </div>
+
+        <!-- Leaderboard Tab -->
+        <div class="tab-content" id="leaderboardTab">
+          <div class="leaderboard" id="leaderboard"></div>
+        </div>
+
+        <!-- Bias Audit Tab -->
+        <div class="tab-content" id="biasAuditTab" style="display:none;">
+          <div class="bias-report" id="biasReport"></div>
+        </div>
+
+        <div class="results-footer">
+          <button class="btn btn-outline" onclick="resetTool()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            New Screening
+          </button>
+          <button class="btn btn-primary" onclick="exportReport()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            Export Report
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="nav-logo">
+            <div class="logo-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2.2"
+                  stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+            <span>RecruitIQ</span>
+          </a>
+          <p>AI-powered resume screening with built-in bias detection. Built for transparent, equitable hiring.</p>
+        </div>
+        <div class="footer-links-group">
+          <h4>Features</h4>
+          <ul>
+            <li><a href="#features">Multi-Dim Scoring</a></li>
+            <li><a href="#bias-audit">Bias Audit</a></li>
+            <li><a href="#how-it-works">Pipeline</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-group">
+          <h4>Project</h4>
+          <ul>
+            <li><a href="#">Specification v1.0</a></li>
+            <li><a href="#">Jupyter Notebook</a></li>
+            <li><a href="#">Written Report</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 RecruitIQ · NLP Ambitious Project · Version 1.0</p>
+        <p>Tier: <span class="tag-ambitious">Ambitious</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+
+</html>
